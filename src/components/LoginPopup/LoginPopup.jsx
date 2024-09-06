@@ -23,7 +23,7 @@ const LoginPopup = ({ setShowLogin }) => {
 
 const onLogin = async(event) =>{
   event.preventDefault();
-  let newUrl = APIURL.Login;
+  let newUrl = APIURL.url;
   if(currentState === 'Login') {
     newUrl = newUrl+"/api/user/login"
   } else {

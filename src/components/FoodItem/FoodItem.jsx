@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import "./FoodItem.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
+import { APIURL } from "../../constants/APIConstant";
 const FoodItem = ({ item: { _id, image, name, price, description } }) => {
   const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
   return (
     <div className="food-item">
       <div className="food-item-img-container">
-        <img className="food-item-img" src={image} alt="" />
+        <img className="food-item-img" src={APIURL.url+'/images/'+image} alt="" />
         {!cartItems[_id] ? (
           <img
             className="add"
